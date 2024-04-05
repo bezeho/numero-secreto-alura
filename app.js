@@ -11,7 +11,7 @@ function exibirTexto(tag, texto){
 
 function mensagemInicial(){
     exibirTexto('h1','Número Secreto');
-    exibirTexto('p','Escolha um número de 1 a 10:');
+    exibirTexto('p','Escolha um número de 1 a 1.000:');
     console.log(numeroSecreto);
     document.getElementById('reiniciar').setAttribute('disabled',true);
     limparCampo();
@@ -23,7 +23,7 @@ function verificarChute(){
     let chute = document.querySelector('input').value;
 
     if (!chute){
-        alert("Digite um valor de 1 a 10!");
+        alert("Digite um valor de 1 a 1.000!");
     }
 
     else if (chute==numeroSecreto){
@@ -50,7 +50,7 @@ function verificarChute(){
 }
 
 function gerarNumeroAleatorio() {
-    let numeroGerado = parseInt(Math.random()*10+1);
+    let numeroGerado = parseInt(Math.random()*1000+1);
     let quantElement = listaSorteio.length;
 
     if (quantElement == limiteLista){
