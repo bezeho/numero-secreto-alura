@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body {
+    background: linear-gradient(#064b17 0%, #031b0b 33.33%, #102702 66.67%, #040e01 100%);
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
+body::before {
+    background-image: url("img/code.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+}
+
+.container {
+    width: 60%;
+    height: 60%;
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 32px;
+    border: 1px solid #0c7426;
+    box-shadow: 4px 4px 20px 0px rgba(1, 14, 3, 0.10);
+    background-color: rgba(255, 255, 255, 0.1);
+    /* background-image: url("img/Ruido.png"); */
+    background-size: 100% 100%;
+    position: relative;
+}
+
+
+.container__conteudo {
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: center;
+    position: absolute;
+    top: 5%;
+    bottom: auto;
+}
+
+.container__imagem-pessoa{
+    height: 30%;
+    width: 30%;
+}
+
+.container__informacoes {
+    flex: 1;
+    padding: 2rem;
+}
+
+.container__botao {
+    border-radius: 16px;
+    background: #168b3d;
+    border: 1px solid #7ce095;
+    padding: 16px 24px;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
+    margin-top: 1.5rem;
+}
+
+.container__texto {
+    margin: 16px 0 16px 0;
+}
+
+.container__texto-azul {
+    color: #135a2a;
+}
+
+.container__input {
+    width: 100%;
+    height: 72px;
+    border-radius: 16px;
+    background-color: #FFF;
+    border: none;
+    color: #168b3d;
+    padding: 2rem;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}
+
+.container__botoes {
+    display: flex;
+    gap: 1em;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 64px;
+    padding-bottom: 3rem;
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+}
+
+button{
+    font-family: 'Inter', sans-serif;
+    font-size: 64px;
+}
+
+.texto__paragrafo {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+button:disabled {
+    background-color: rgb(184, 184, 184);
+}
+
+@media screen and (max-width: 1500px){
+
+    .container__conteudo {
+        height: 80%;
+        width: 0%;
+        display: flex;
+        position: static; 
+        bottom: auto; 
+    }
+
+    .container {
+        width: auto;
+        height: auto;
+        margin: 5%;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .container__imagem-pessoa {
+        display: none;
+    }
+
+}
+
+
+@media screen and (max-width: 1200px) {
+
+    h1 {
+        font-size: 50px;
+    }
+
+    .container {
+        width: auto;
+        height: auto;
+        margin: 5%;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .container__botao {
+        font-size: 24px;
+    }
+
+
+    .texto__paragrafo {
+        font-size: 18px;
+    }
+
+    .container__imagem-pessoa {
+        display: none;
+    }
+
+    .container__conteudo {
+        height: 80%;
+        width: 0%;
+        display: flex;
+        position: static; 
+        bottom: auto; 
+    }
+
+    .container__informacoes {
+        flex-direction: column; /* Altera a direção do flexbox para vertical */
+        text-align: center; /* Centraliza o texto horizontalmente */
+        padding: 1rem; 
+    }
+}
