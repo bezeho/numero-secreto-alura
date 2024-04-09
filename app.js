@@ -35,6 +35,7 @@ function verificarChute(){
         exibirTexto('p',mensagemTentativas);
         document.getElementById('reiniciar').removeAttribute('disabled');
         document.getElementById('chute').setAttribute('disabled',true);
+        novoJogo();
     } else {
         if (chute>numeroSecreto){
             exibirTexto('h1', 'Errou!');
