@@ -29,7 +29,7 @@ body::before {
 .container {
     width: 60%;
     height: 60%;
-    margin-top: 2%;
+    margin-top: 1%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -45,9 +45,8 @@ body::before {
 
 .container__conteudo {
     display: flex;
-    flex-direction: row;
     align-items: space-between;
-    justify-content: center;
+    justify-content: space-evenly;
     position: absolute;
     top: 5%;
     bottom: auto;
@@ -84,6 +83,7 @@ body::before {
 }
 
 .container__input {
+    text-align: center;
     width: 100%;
     height: 72px;
     border-radius: 16px;
@@ -91,7 +91,7 @@ body::before {
     border: none;
     color: #168b3d;
     padding: 2rem;
-    font-size: 32px;
+    font-size: 42px;
     font-weight: 700;
     font-family: 'Inter', sans-serif;
 }
@@ -127,52 +127,44 @@ button:disabled {
     background-color: rgb(184, 184, 184);
 }
 
-@media screen and (max-width: 1500px){
-
-    .container__conteudo {
-        height: 80%;
-        width: 0%;
-        display: flex;
-        position: static; 
-        bottom: auto; 
-    }
-
-    .container {
-        width: auto;
-        height: auto;
-        margin: 5%;
-        justify-content: center;
-        align-items: flex-start;
-    }
+@media screen and (max-width: 1450px) {
 
     .container__imagem-pessoa {
         display: none;
     }
 
-}
 
+}
 
 @media screen and (max-width: 1200px) {
 
     h1 {
-        font-size: 50px;
+        font-size: 42px;
     }
 
     .container {
         width: auto;
         height: auto;
-        margin: 5%;
+        margin: 2%;
         justify-content: center;
         align-items: flex-start;
     }
 
     .container__botao {
-        font-size: 24px;
+        border-radius: 16px;
+        background: #168b3d;
+        border: 1px solid #7ce095;
+        padding: 10px 18px;
+        width: 100%;
+        font-size: 22px;
+        font-weight: 700;
+        border: none;
+        margin-top: 1rem;
     }
 
 
     .texto__paragrafo {
-        font-size: 18px;
+        font-size: 22px;
     }
 
     .container__imagem-pessoa {
@@ -180,16 +172,55 @@ button:disabled {
     }
 
     .container__conteudo {
-        height: 80%;
-        width: 0%;
+        height: 70%;
+        width: 70%;
         display: flex;
         position: static; 
-        bottom: auto; 
+        /* bottom: auto;  */
     }
 
     .container__informacoes {
-        flex-direction: column; /* Altera a direção do flexbox para vertical */
-        text-align: center; /* Centraliza o texto horizontalmente */
+        flex-direction: column; 
+        text-align: center; 
         padding: 1rem; 
     }
+
+    .container__input {
+        text-align: center;
+        width: 100%;
+        height: 32px;
+        border-radius: 16px;
+        background-color: #FFF;
+        border: none;
+        color: #168b3d;
+        padding: 2rem;
+        font-size: 32px;
+        font-weight: 700;
+        font-family: 'Inter', sans-serif;
+    }
+}
+
+@media screen and (max-width: 600px){
+
+    .container__conteudo {
+        height: 90%;
+        width: 90%;
+        display: flex;
+        position: static; 
+        /* bottom: auto;  */
+    }
+
+    .container {
+        width: auto;
+        height: auto;
+    }
+    
+    h1 {
+        font-size: 36px;
+    }
+
+    .texto__paragrafo {
+        font-size: 18px;
+    }
+
 }
