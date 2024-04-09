@@ -29,9 +29,9 @@ function verificarChute(){
     }
 
     else if (chute==numeroSecreto){
-        alert(`Parabéns!<br>Você descobriu com ${tentativas} ${palavraTentativas}.`);
         exibirTexto('h1','Acertou!');
         let palavraTentativas = tentativas==1 ? 'tentativa' : 'tentativas';
+        alert(`Parabéns!<br>Você descobriu com ${tentativas} ${palavraTentativas}.`);
         let mensagemTentativas = `O número secreto era ${numeroSecreto}!<br>Você descobriu com ${tentativas} ${palavraTentativas}.`;
         exibirTexto('p',mensagemTentativas);
         document.getElementById('reiniciar').removeAttribute('disabled');
