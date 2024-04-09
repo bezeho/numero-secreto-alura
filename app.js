@@ -1,5 +1,5 @@
 let listaSorteio = [];
-let limiteLista = 10;
+let limiteLista = 100;
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
 
@@ -10,8 +10,8 @@ function exibirTexto(tag, texto){
 }
 
 function mensagemInicial(){
-    exibirTexto('h1','Número Secreto');
-    exibirTexto('p','Escolha um número de 1 a 1.000:');
+    exibirTexto('h1','Descubra o <br>Número Secreto!');
+    exibirTexto('p','Escolha um número de 1 a 100:');
     console.log(numeroSecreto);
     document.getElementById('reiniciar').setAttribute('disabled',true);
     limparCampo();
@@ -22,8 +22,10 @@ mensagemInicial();
 function verificarChute(){
     let chute = document.querySelector('input').value;
 
-    if (!chute){
-        alert("Digite um valor de 1 a 1.000!");
+    if (!chute || chute <= 0 || chute > 100) {
+        alert('Valor inválido!');
+        exibirTexto('h1','Valor Inválido!');
+        exibirTexto('p','Digite um valor de 1 a 100!');
     }
 
     else if (chute==numeroSecreto){
@@ -46,11 +48,22 @@ function verificarChute(){
         }
         tentativas++;
         limparCampo();
-    }   
+    } 
+
+    if (tentativas>10) {
+        alert('Tente novamente!')
+        novoJogo();
+        }
+}
+
+function verificarTecla(event) {
+    if (event.key === 'Enter') {
+        verificarChute();
+    }
 }
 
 function gerarNumeroAleatorio() {
-    let numeroGerado = parseInt(Math.random()*1000+1);
+    let numeroGerado = parseInt(Math.random()*100+1);
     let quantElement = listaSorteio.length;
 
     if (quantElement == limiteLista){
@@ -79,3 +92,4 @@ function novoJogo(){
     document.getElementById('reiniciar').setAttribute('disabled',true);
     document.getElementById('chute').removeAttribute('disabled');
 }
+
